@@ -1,3 +1,9 @@
+{{ 'discount-product.css' | asset_url | stylesheet_tag }}
+
+{%- render 'discount-product', section,section -%}
+
+<script src="{{ 'discount-product.js' | asset_url }}" defer="defer"></script>
+
 {% schema %}
     {
       "name": "Discount Product",
@@ -17,11 +23,13 @@
         {
           "type": "text",
           "id": "title",
+          "default":"Get Discount",
           "label": "Title"
         },
         {
           "type": "textarea",
           "id": "description",
+          "default":"simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
           "label": "Description"
         },
         {
@@ -64,6 +72,124 @@
           "label": "Button Text"
         },
 
+        {
+          "type": "header",
+          "content": "Discount Timer"
+        },
+        {
+          "type": "text",
+          "id": "timer_message",
+          "label": "Timer Message"
+        },
+        {
+          "type": "html",
+          "id": "timer_percent_off",
+          "label": "Timer Percent Off"
+        },
+
+        {
+        "type": "header",
+        "content": "Countdown Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_countdown",
+        "label": "Show Countdown",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "countdown_end_month",
+        "label": "Countdown End Month",
+        "options": [
+          {
+            "value": "january",
+            "label": "January"
+          },
+          {
+            "value": "february",
+            "label": "February"
+          },
+          {
+            "value": "march",
+            "label": "March"
+          },
+          {
+            "value": "april",
+            "label": "April"
+          },
+          {
+            "value": "may",
+            "label": "May"
+          },
+          {
+            "value": "june",
+            "label": "June"
+          },
+          {
+            "value": "july",
+            "label": "July"
+          },
+          {
+            "value": "august",
+            "label": "August"
+          },
+          {
+            "value": "september",
+            "label": "September"
+          },
+          {
+            "value": "october",
+            "label": "October"
+          },
+          {
+            "value": "november",
+            "label": "November"
+          },
+          {
+            "value": "december",
+            "label": "December"
+          }
+        ],
+        "default": "january"
+      },
+      {
+        "type": "text",
+        "id": "countdown_end_year",
+        "default": "2024",
+        "info": "e.g 2024",
+        "label": "Countdown End at Year"
+      },
+      {
+        "type": "text",
+        "id": "countdown_end_date",
+        "default": "20",
+        "info": "e.g 20",
+        "label": "Countdown End at date"
+      },
+      {
+        "type": "text",
+        "id": "countdown_end_time",
+        "default": "02:24:59",
+        "info": "e.g 02:24:59",
+        "label": "Countdown End at Time"
+      },
+      {
+        "type": "header",
+        "content": "Countdown Text"
+      },
+      {
+        "type": "textarea",
+        "id": "countdown_default_text",
+        "default": "Hurry up to get this Discount <span class='custom-time' ><\/span> ",
+        "label": "Countdown Default Text"
+      },
+      {
+        "type": "textarea",
+        "id": "countdown_discount_end_text",
+        "default": "New Price. Sale Has Ended!",
+        "label": "Countdown End Text"
+      },
 
         {
           "type": "header",

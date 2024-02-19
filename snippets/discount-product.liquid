@@ -1,0 +1,121 @@
+{%- liquid
+  assign enable_discount_product = section.settings.enable_discount_product
+  assign title = section.settings.title
+  assign description = section.settings.description
+  assign discount_product = section.settings.product
+  assign product_title = section.settings.product_title
+  assign product_vendor = section.settings.product_vendor
+  assign product_category = section.settings.product_category
+  assign product_description = section.settings.product_description
+  assign btn_text = section.settings.btn_text
+  assign countdown_default_text = section.settings.countdown_default_text
+  assign countdown_discount_end_text = settings.countdown_discount_end_text
+  assign countdown_end_time = section.settings.countdown_end_time
+  assign countdown_end_date = section.settings.countdown_end_date
+  assign countdown_end_year = section.settings.countdown_end_year
+  assign countdown_end_month = section.settings.countdown_end_month
+  assign bg_color_1 = section.settings.bg_color_1
+  assign bg_color_2 = section.settings.bg_color_2
+  assign text_color = section.settings.text_color
+  assign bg_button_color_1 = section.settings.bg_button_color_1
+  assign bg_button_color_2 = section.settings.bg_button_color_2
+  assign button_text_color = section.settings.button_text_color
+  assign percent_off_bg_color = section.settings.percent_off_bg_color
+  assign percent_off_text_color = section.settings.percent_off_text_color
+  assign bg_timer_color_1 = section.settings.bg_timer_color_1
+  assign bg_timer_color_2 = section.settings.bg_timer_color_2
+  assign timer_text_color = section.settings.timer_text_color
+  assign circle_img = section.settings.circle_img
+  assign dots_img = section.settings.dots_img
+  assign bg_sping_img = section.settings.bg_sping_img
+-%}
+
+<div class="discount-section-wrapper">
+  <div class="discount-section-inner">
+    <div class="discount-row">
+      <div class="discount-col discount-col-head">
+        <div class="discount-col-heading">
+          {%- if title != blank -%}
+            <h2>{{ title }}</h2>
+          {%- endif -%}
+        </div>
+        <div class="discount-col-text">
+          {%- if description != blank -%}
+            <p>{{ description }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="discount-col discount-col-img">
+        {%- if discount_product != blank -%}
+          <div class="discount-product-img">
+            <img src="{{ discount_product.featured_image |  img_url: 'medium' }}" width="198px" height="182px">
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="discount-col discount-col-pro">
+        <div class="discount-product-info">
+          {%- if product_title != blank -%}
+            <div class="discount-pro-title">
+              <h3>{{ product_title }}</h3>
+            </div>
+          {%- endif -%}
+          {%- if product_vendor != blank -%}
+            <div class="discount-pro-vendor">
+              <label>Vendor : </label><span>{{ product_vendor }}</span>
+            </div>
+          {%- endif -%}
+          {%- if product_category != blank -%}
+            <div class="discount-pro-category">
+              <label>Category : </label><span>{{ product_category }}</span>
+            </div>
+          {%- endif -%}
+          {%- if product_description != blank -%}
+            <div class="discount-pro-desc">
+              <p>{{ product_description }}</p>
+            </div>
+          {%- endif -%}
+          {%- if btn_text != blank -%}
+            <div class="discount-pro-atc">
+              <button class="discount-pro-atc-btn">
+                <span>{{ btn_text }}</span>
+              </button>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="discount-col discount-col-time">
+        <div class="discount-col-timer">
+          <div class="discount-timer-time">
+            <div id="clockdiv">
+              <div>
+                <span id="daysBox"></span>
+                <div class="smalltext">Days</div>
+              </div>
+              <div>
+                <span id="hoursBox"></span>
+                <div class="smalltext">Hours</div>
+              </div>
+              <div>
+                <span id="minsBox"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span id="secsBox"></span>
+                <div class="smalltext">Seconds</div>
+              </div>
+            </div>
+          </div>
+          <div class="discount-timer-label" id="saleActive">
+            <h3>Hurry up to get this Discount</h3>
+          </div>
+          <div id="saleEnded">{{ countdown_discount_end_text }}</div>
+          <div class="discount-timer-percent">
+            <div class="discount-timer-percent-box">Get <span class="h2">20%</span> off</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

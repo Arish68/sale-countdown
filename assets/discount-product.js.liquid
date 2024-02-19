@@ -1,0 +1,34 @@
+function cdtd() {
+	var xmas = new Date("{{countdown_end_month}} {{ countdown_end_date }}, {{countdown_end_year}} {{ countdown_end_time }}");
+	var now = new Date();
+	var timeDiff = xmas.getTime() - now.getTime();
+	if (timeDiff <= 0) {
+        clearTimeout(timer);
+    		   // Run any code needed for countdown completion here
+		         document.querySelector("#clockdiv").style.display="none";
+				document.querySelector("#saleActive").style.display="none";
+               {% if countdown_sale_end_text != blank %}
+				document.querySelector("#saleEnded").style.display="block";			
+               {% endif %}
+        }
+	var seconds = Math.floor(timeDiff / 1000);
+	var minutes = Math.floor(seconds / 60);
+	var hours = Math.floor(minutes / 60);
+	var days = Math.floor(hours / 24);
+	  hours %= 24;
+      minutes %= 60;
+      seconds %= 60;
+	  if (days == 0)
+        document.querySelector("#daysBox").style.display="none";
+      else
+        document.getElementById("daysBox").innerHTML = '<span class="box-time">'+days+'</span> :';
+      if (hours == 0)
+        document.querySelector("#hoursBox").style.display="none";
+      else
+	document.getElementById("hoursBox").innerHTML = '<span class="box-time">'+hours+'</span> :';
+	document.getElementById("minsBox").innerHTML = '<span class="box-time">'+minutes+'</span> :';
+	document.getElementById("secsBox").innerHTML = '<span class="box-time">'+seconds+'</span>';
+
+	var timer = setTimeout('cdtd()',1000);
+}
+cdtd();

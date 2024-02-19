@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('font/Inter.ttf');
+}
+
+@font-face {
+    font-family: 'Inder';
+    src: url('font/Inder.ttf');
+}
+
+.discount-section-wrapper {
+    position: relative;
+}
+
+.discount-section-inner {
+    background: linear-gradient(180deg, #F3AA54 0%, #F29629 100%);
+}
+
+.discount-section-inner::before {
+    content: '';
+    background: url('img_url/bg-1.png') left top no-repeat,
+        url('img_url/bg-2.png') right bottom no-repeat,
+        url('img_url/bg-3.png') left bottom no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.discount-row h2,
+.discount-row h3 {
+    margin-top: 0;
+}
+
+.discount-row p,
+.discount-row h2,
+.discount-row h3 {
+    color: #fff;
+}
+
+
+.discount-row {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.discount-row .discount-col-head h2 {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 0em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.discount-row .discount-col-text {
+    max-width: 322px;
+}
+
+.discount-row .discount-col-text p {
+    font-family: Inder;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 0px;
+    letter-spacing: 0em;
+}
+
+.discount-row .discount-col.discount-col-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount-row .discount-pro-title h3 {
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    margin-bottom: 10px;
+    letter-spacing: 0em;
+}
+
+.discount-row .discount-pro-vendor,
+.discount-row .discount-pro-category {
+    font-family: Inter;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+
+.discount-row .discount-pro-desc {
+    max-width: 245px
+}
+
+.discount-row .discount-pro-desc p {
+
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0em;
+}
+
+.discount-row .discount-pro-atc-btn {
+    max-width: 184px;
+    border-radius: 8px;
+    border: none;
+    width: 184px;
+    padding: 5px;
+    background: linear-gradient(180deg, #2693FA 0%, #174E83 100%);
+
+}
+
+.discount-row .discount-pro-atc span {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.discount-row .discount-timer-time {
+    max-width: 338px;
+    min-height: 79px;
+    background: linear-gradient(180deg, #FA7226 0%, #DA2127 100%);
+    border-radius: 4px;
+}
+
+.discount-row .discount-timer-label {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: 0.06em;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.discount-row .discount-timer-percent-box {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 55px;
+    letter-spacing: 0em;
+    text-align: center;
+    background: #EF5726;
+    margin: 0 auto;
+    width: 212px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.discount-row .discount-timer-percent-box span {
+    font-family: Inter;
+    font-size: 32px;
+}
+
+.discount-timer-label h3 {
+    margin-bottom: 2px;
+}
+
+.discount-timer-time p {
+    margin-top: 0px;
+}
+
+.discount-pro-atc {
+    margin-top: 30px;
+}
+#clockdiv{
+	font-family: inherit;
+	color: #374a6f;
+	display: inline-block;
+	text-align: center;
+	font-size: 30px;
+  margin: 0 5px 5px;
+}
+
+#clockdiv > div{
+	padding: 30px;
+	border-radius: 3px;
+	background: rgb(249,164,135);
+	display: inline-block;
+  margin: 5px;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: rgb(251,193,166);
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+#saleActive, #saleEnded { 
+	background: #356;
+	border-radius: 3px;
+	color: rgb(249,164,135);
+	font-weight: 100;
+	font-size: 20px;
+	margin: 40px 0px 20px;
+	padding: 30px;	
+}
+
+#saleEnded {
+	display:none;
+}
+@media screen and (min-width: 720px) {
+    .discount-row {
+        padding-left: 140px;
+    }
+
+    .discount-col {
+        width: 25%;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .discount-col {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .discount-row {
+        flex-direction: column;
+    }
+}
