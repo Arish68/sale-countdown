@@ -178,48 +178,55 @@
 .discount-pro-atc {
     margin-top: 30px;
 }
-#clockdiv{
-	font-family: inherit;
-	color: #374a6f;
-	display: inline-block;
-	text-align: center;
-	font-size: 30px;
-  margin: 0 5px 5px;
+
+#clockdiv {
+    font-family: inherit;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px 5px;
 }
 
-#clockdiv > div{
-	padding: 30px;
-	border-radius: 3px;
-	background: rgb(249,164,135);
-	display: inline-block;
-  margin: 5px;
+#clockdiv>div {
+    border-radius: 3px;
+    display: inline-block;
 }
 
-#clockdiv div > span{
-	padding: 15px;
-	border-radius: 3px;
-	background: rgb(251,193,166);
-	display: inline-block;
+#clockdiv div>span {
+    display: inline-block;
+    color: #fff;
 }
 
-.smalltext{
-	padding-top: 5px;
-	font-size: 16px;
+.smalltext {
+    padding-top: 5px;
+    font-size: 16px;
 }
 
-#saleActive, #saleEnded { 
-	background: #356;
-	border-radius: 3px;
-	color: rgb(249,164,135);
-	font-weight: 100;
-	font-size: 20px;
-	margin: 40px 0px 20px;
-	padding: 30px;	
+#saleActive,
+#saleEnded {
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 16px;
+    margin: 10px 0px 10px;
+    padding: 5px 5px 0px 10px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    align-self: center;
 }
 
 #saleEnded {
-	display:none;
+    display: none;
 }
+
+.box-time {
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 900;
+}
+
 @media screen and (min-width: 720px) {
     .discount-row {
         padding-left: 140px;
