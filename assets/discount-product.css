@@ -197,11 +197,6 @@
     color: #fff;
 }
 
-.smalltext {
-    padding-top: 5px;
-    font-size: 16px;
-}
-
 #saleActive,
 #saleEnded {
     border-radius: 3px;
