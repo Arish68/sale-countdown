@@ -1,5 +1,5 @@
 function cdtd() {
-	var xmas = new Date("{{countdown_end_month}} {{ countdown_end_date }}, {{countdown_end_year}} {{ countdown_end_time }}");
+	var xmas = new Date("{{ countdown_end_month }} {{ countdown_end_date }}, {{countdown_end_year}} {{ countdown_end_time }}");
 	var now = new Date();
 	var timeDiff = xmas.getTime() - now.getTime();
 	if (timeDiff <= 0) {
