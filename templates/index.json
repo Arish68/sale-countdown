@@ -228,7 +228,7 @@
         "enable_countdown": false,
         "countdown_end_month": "february",
         "countdown_end_year": "2024",
-        "countdown_end_date": "20",
+        "countdown_end_date": "21",
         "countdown_end_time": "02:24:59",
         "countdown_default_text": "Hurry up to get this Discount <span class=\"custom-time\"><\/span>",
         "countdown_discount_end_text": "New Price. Sale Has Ended!",
