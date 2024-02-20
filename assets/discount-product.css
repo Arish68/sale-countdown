@@ -244,10 +244,18 @@
     .discount-col {
         flex: 50%;
     }
+
 }
 
 @media screen and (max-width: 600px) {
     .discount-row {
         flex-direction: column;
+    }
+    .discount-pro-atc {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .discount-row .discount-pro-atc-btn {
+        width: 100%;
     }
 }
