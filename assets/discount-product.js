@@ -24,14 +24,8 @@ function addItemToCart(variant_id, qty) {
   })
   .then(response => response.json())
   .then(() => {
-    alert('Product Added in your cart');
-    document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-      bubbles: true
-    }));
+    window.location.href = "/cart";
   })
   .catch(error => console.error('Error:', error));
 
-  document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
-    bubbles: true
-  }));
 }
