@@ -28,5 +28,5 @@ function addItemToCart(variant_id, qty) {
  var addButton = document.querySelector('.discount-pro-atc-btn');
 	addButton.addEventListener('click', function() {
 		var productId = addButton.getAttribute('data-var-id');
-		alert(productId);
+		addItemToCart(productId, 1);
 	});
