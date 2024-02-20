@@ -241,7 +241,10 @@
         "percent_off_text_color": "#ffffff",
         "bg_timer_color_1": "#fa7226",
         "bg_timer_color_2": "#da2127",
-        "timer_text_color": "#ffffff"
+        "timer_text_color": "#ffffff",
+        "circle_img": "shopify:\/\/shop_images\/bg-1.png",
+        "dots_img": "shopify:\/\/shop_images\/bg-3.png",
+        "bg_sping_img": "shopify:\/\/shop_images\/bg-2.png"
       }
     }
   },
