@@ -223,15 +223,14 @@
         "product_vendor": "Nikon",
         "product_category": "DSLR",
         "btn_text": "Add To Cart",
-        "timer_message": "",
-        "timer_percent_off": "",
-        "enable_countdown": false,
+        "enable_countdown": true,
         "countdown_end_month": "february",
         "countdown_end_year": "2024",
         "countdown_end_date": "21",
         "countdown_end_time": "02:24:59",
         "countdown_default_text": "Hurry up to get this Discount <span class=\"custom-time\"><\/span>",
         "countdown_discount_end_text": "New Price. Sale Has Ended!",
+        "countdown_timer_percent_off": "Get <span class=\"h2\">20%<\/span> off",
         "bg_color_1": "#f3aa54",
         "bg_color_2": "#f3aa54",
         "text_color": "#ffffff",
@@ -242,7 +241,10 @@
         "percent_off_text_color": "#ffffff",
         "bg_timer_color_1": "#fa7226",
         "bg_timer_color_2": "#da2127",
-        "timer_text_color": "#ffffff"
+        "timer_text_color": "#ffffff",
+        "circle_img": "shopify:\/\/shop_images\/bg-1.png",
+        "dots_img": "shopify:\/\/shop_images\/bg-3.png",
+        "bg_sping_img": "shopify:\/\/shop_images\/bg-2.png"
       }
     }
   },
