@@ -1,34 +1,32 @@
-function cdtd() {
-	var xmas = new Date("{{ countdown_end_month }} {{ countdown_end_date }}, {{countdown_end_year}} {{ countdown_end_time }}");
-	var now = new Date();
-	var timeDiff = xmas.getTime() - now.getTime();
-	if (timeDiff <= 0) {
-        clearTimeout(timer);
-    		   // Run any code needed for countdown completion here
-		         document.querySelector("#clockdiv").style.display="none";
-				document.querySelector("#saleActive").style.display="none";
-               {% if countdown_sale_end_text != blank %}
-				document.querySelector("#saleEnded").style.display="block";			
-               {% endif %}
-        }
-	var seconds = Math.floor(timeDiff / 1000);
-	var minutes = Math.floor(seconds / 60);
-	var hours = Math.floor(minutes / 60);
-	var days = Math.floor(hours / 24);
-	  hours %= 24;
-      minutes %= 60;
-      seconds %= 60;
-	  if (days == 0)
-        document.querySelector("#daysBox").style.display="none";
-      else
-        document.getElementById("daysBox").innerHTML = '<span class="box-time">'+days+'</span> :';
-      if (hours == 0)
-        document.querySelector("#hoursBox").style.display="none";
-      else
-	document.getElementById("hoursBox").innerHTML = '<span class="box-time">'+hours+'</span> :';
-	document.getElementById("minsBox").innerHTML = '<span class="box-time">'+minutes+'</span> :';
-	document.getElementById("secsBox").innerHTML = '<span class="box-time">'+seconds+'</span>';
+function addItemToCart(variant_id, qty) {
+    var data = {
+      "id": variant_id,
+      "quantity": qty
+    };
 
-	var timer = setTimeout('cdtd()',1000);
-}
-cdtd();
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(() => {
+      alert('Product Added in your cart');
+      document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
+        bubbles: true
+      }));
+    })
+    .catch(error => console.error('Error:', error));
+
+    document.documentElement.dispatchEvent(new CustomEvent('cart:refresh', {
+      bubbles: true
+    }));
+  }
+
+ var addButton = document.querySelector('.discount-pro-atc-btn');
+	addButton.addEventListener('click', function() {
+		var productId = addButton.getAttribute('data-var-id');
+		alert(productId);
+	});
