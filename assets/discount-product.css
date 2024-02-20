@@ -18,9 +18,6 @@
 
 .discount-section-inner::before {
     content: '';
-    background: url('img_url/bg-1.png') left top no-repeat,
-        url('img_url/bg-2.png') right bottom no-repeat,
-        url('img_url/bg-3.png') left bottom no-repeat;
     position: absolute;
     top: 0;
     left: 0;
