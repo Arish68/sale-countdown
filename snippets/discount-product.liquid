@@ -33,10 +33,10 @@
 -%}
 {%- style -%}
 
-    .discount-section-inner {
+    #discount-section-{{ section.id }} .discount-section-inner {
         background: linear-gradient(180deg, {{ bg_color_1 }} 0%, {{ bg_color_2 }} 100%);
     }
-    .discount-section-inner::before {
+    #discount-section-{{ section.id }} .discount-section-inner::before {
        content: '';
        background: url('{{ circle_img |  img_url: 'master'  }}') left top no-repeat,
            url('{{ dots_img |  img_url: 'master'  }}') left bottom no-repeat,
@@ -47,39 +47,37 @@
        width: 100%;
        height: 100%;
    }
-    .discount-row p,
-    .discount-row h2,
-    .discount-row h3,
-    .discount-row .discount-pro-vendor,
-    .discount-row .discount-pro-category {
+   #discount-section-{{ section.id }} .discount-row p,
+   #discount-section-{{ section.id }} .discount-row h2,
+   #discount-section-{{ section.id }} .discount-row h3,
+   #discount-section-{{ section.id }} .discount-row .discount-pro-vendor,
+   #discount-section-{{ section.id }} .discount-row .discount-pro-category {
         color: {{ text_color }};
     }
-
-    .discount-row .discount-pro-atc-btn {
+    #discount-section-{{ section.id }} .discount-row .discount-pro-atc-btn {
     background: linear-gradient(180deg, {{ bg_button_color_1  }} 0%, {{ bg_button_color_2  }} 100%);
     }
-    .discount-row .discount-pro-atc span {
+    #discount-section-{{ section.id }} .discount-row .discount-pro-atc span {
      color: {{ button_text_color  }};
     }
-
-    .discount-row .discount-timer-percent-box {
+    #discount-section-{{ section.id }} .discount-row .discount-timer-percent-box {
         background:{{ percent_off_bg_color }};
         color: {{ percent_off_text_color }};
     }
-    .discount-row .discount-timer-percent-box span {
+    #discount-section-{{ section.id }} .discount-row .discount-timer-percent-box span {
     color: {{ percent_off_text_color }};
     }
-    .discount-row .discount-timer-time {
+    #discount-section-{{ section.id }} .discount-row .discount-timer-time {
     background: linear-gradient(180deg, {{ bg_timer_color_1 }} 0%, {{ bg_timer_color_2 }} 100%);
     }
-    #clockdiv {
+    #discount-section-{{ section.id }} #clockdiv {
     color: {{ timer_text_color }};
     }
-    #clockdiv div>span {
+    #discount-section-{{ section.id }} #clockdiv div>span {
         color: {{ timer_text_color }};
     }
-    #saleActive,
-    #saleEnded {
+    #discount-section-{{ section.id }} #saleActive,
+    #discount-section-{{ section.id }} #saleEnded {
         color: {{ timer_text_color }};
     }
 
@@ -146,19 +144,19 @@
           <div class="discount-timer-time">
             <div id="clockdiv">
               <div>
-                <div class="smalltext">DAYS</div>
+                <div class="smalltext day-label">DAY</div>
                 <span id="daysBox"></span>
               </div>
               <div>
-                <div class="smalltext">HR</div>
+                <div class="smalltext hr-label">HR</div>
                 <span id="hoursBox"></span>
               </div>
               <div>
-                <div class="smalltext">MIN</div>
+                <div class="smalltext min-label">MIN</div>
                 <span id="minsBox"></span>
               </div>
               <div>
-                <div class="smalltext">SEC</div>
+                <div class="smalltext sec-label">SEC</div>
                 <span id="secsBox"></span>
               </div>
             </div>
@@ -207,6 +205,7 @@
       seconds %= 60;
 	  if (days == 0)
         document.querySelector("#daysBox").style.display="none";
+        document.querySelector(".day-label").style.display="none";
       else
         document.getElementById("daysBox").innerHTML = '<span class="box-time">'+days+'</span> :';
       if (hours == 0)

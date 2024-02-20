@@ -211,7 +211,9 @@
     text-align: center;
     align-self: center;
 }
-
+.smalltext {
+    font-size: 16px;
+}
 #saleEnded {
     display: none;
 }
