@@ -250,6 +250,15 @@
 @media screen and (max-width: 600px) {
     .discount-row {
         flex-direction: column;
+        padding-top: 80px;
+    }
+    .discount-col.discount-col-pro {
+        order: 2;
+        margin-top: 20px;
+    }
+    .discount-col {
+        flex: 50%;
+        z-index: 1;
     }
     .discount-pro-atc {
         margin-top: 25px;
@@ -257,5 +266,8 @@
     }
     .discount-row .discount-pro-atc-btn {
         width: 100%;
+        max-width: 100%;
+        padding: 15px;
+    
     }
 }
