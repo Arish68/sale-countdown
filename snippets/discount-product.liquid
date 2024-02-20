@@ -204,8 +204,10 @@
       minutes %= 60;
       seconds %= 60;
 	  if (days == 0)
+      {
         document.querySelector("#daysBox").style.display="none";
         document.querySelector(".day-label").style.display="none";
+        }
       else
         document.getElementById("daysBox").innerHTML = '<span class="box-time">'+days+'</span> :';
       if (hours == 0)
