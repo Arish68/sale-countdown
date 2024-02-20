@@ -113,6 +113,7 @@
     border: none;
     width: 184px;
     padding: 5px;
+    cursor: pointer;
     background: linear-gradient(180deg, #2693FA 0%, #174E83 100%);
 
 }
