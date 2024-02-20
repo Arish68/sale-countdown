@@ -167,6 +167,7 @@
 .discount-row .discount-timer-percent-box span {
     font-family: Inter;
     font-size: 32px;
+    color: #fff;
 }
 
 .discount-timer-label h3 {

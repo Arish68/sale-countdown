@@ -9,7 +9,9 @@
   assign product_description = section.settings.product_description
   assign btn_text = section.settings.btn_text
   assign countdown_default_text = section.settings.countdown_default_text
-  assign countdown_discount_end_text = settings.countdown_discount_end_text
+  assign countdown_discount_end_text = section.settings.countdown_discount_end_text
+  assign countdown_timer_percent_off = section.settings.countdown_timer_percent_off
+  assign enable_countdown = section.settings.enable_countdown
   assign countdown_end_time = section.settings.countdown_end_time
   assign countdown_end_date = section.settings.countdown_end_date
   assign countdown_end_year = section.settings.countdown_end_year
@@ -87,6 +89,7 @@
       </div>
       <div class="discount-col discount-col-time">
         <div class="discount-col-timer">
+          {%- if enable_countdown -%}
           <div class="discount-timer-time">
             <div id="clockdiv">
               <div>
@@ -103,13 +106,20 @@
               </div>
             </div>
           </div>
+          {%- endif -%}
+          {%- if countdown_default_text != blank -%}
           <div class="discount-timer-label" id="saleActive">
-            <h3>Hurry up to get this Discount</h3>
+            <h3>{{ countdown_default_text }}</h3>
           </div>
-          <div id="saleEnded">{{ countdown_discount_end_text }}</div>
-          <div class="discount-timer-percent">
+        {%- endif -%}
+        {%- if countdown_discount_end_text != blank -%}
+          <div class="discount-timer-label"  id="saleEnded">{{ countdown_discount_end_text }}</div>
+        {%- endif -%}  
+        {%- if countdown_timer_percent_off != blank -%}
+          <div class="discount-timer-percent" id="percentOff">
             <div class="discount-timer-percent-box">Get <span class="h2">20%</span> off</div>
           </div>
+        {%- endif -%}  
         </div>
       </div>
     </div>
@@ -124,8 +134,9 @@
 	if (timeDiff <= 0) {
         clearTimeout(timer);
     		   // Run any code needed for countdown completion here
-		         document.querySelector("#clockdiv").style.display="none";
+		        document.querySelector("#clockdiv").style.display="none";
 				document.querySelector("#saleActive").style.display="none";
+                document.querySelector("#percentOff").style.display="none";
                {% if countdown_sale_end_text != blank %}
 				document.querySelector("#saleEnded").style.display="block";			
                {% endif %}
