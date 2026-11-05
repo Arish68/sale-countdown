@@ -1,6 +1,6 @@
 {{ 'discount-product.css' | asset_url | stylesheet_tag }}
 
-{%- render 'discount-product', section,section -%}
+{%- render 'discount-product' -%}
 
 {% schema %}
     {
@@ -303,4 +303,13 @@
       ]
     }
     {% endschema %}
-    
+    {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'discount-product', section,section -%}"
+  to: "{%- render 'discount-product' -%}"
+  position: 59..92
+{%- endcomment -%}
